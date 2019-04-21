@@ -17,7 +17,7 @@ public class CadastroUsuarioService {
 	public CadastroUsuarioService() {
 		this.dao = new PessoaDao();
 		
-//		System.out.println(buscaPessoas());
+		System.out.println(buscaPessoas());
 	}
 
 	public void adiciona(Pessoas pessoa) {

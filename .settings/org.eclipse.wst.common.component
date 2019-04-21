@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="agendaa">
+    <wb-module deploy-name="javaguiAgenda">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="agendaa"/>
-        <property name="java-output-path" value="/agendaa/build/classes"/>
+        <property name="java-output-path" value="/javaguiAgenda/build/classes"/>
+        <property name="context-root" value="javaguiAgenda"/>
     </wb-module>
 </project-modules>
