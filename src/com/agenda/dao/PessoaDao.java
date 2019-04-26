@@ -16,7 +16,7 @@ public class PessoaDao {
 
 	public void cadastraDAO(Pessoas pessoa) {
 
-		String SQL = "insert into pessoas (nome, senha, email, telefone, endereco) values (?, ?, ?, ?, ?)";
+		String SQL = "insert into pessoa (nome, senha, email, telefone, endereco) values (?, ?, ?, ?, ?)";
 
 		try {
 			this.connection = new ConnectionFactory().getConnection();
@@ -41,7 +41,7 @@ public class PessoaDao {
 	
 
 	public List<Pessoas> buscaPessoas() {
-		String SQL = "select * from pessoas";
+		String SQL = "select * from pessoa";
 
 		try {
 			this.connection = new ConnectionFactory().getConnection();
@@ -63,8 +63,7 @@ public class PessoaDao {
 
 			stmt.close();
 			this.connection.close();
-			
-			System.out.println(pessoas);
+
 			return pessoas;
 			
 		} catch (SQLException e) {

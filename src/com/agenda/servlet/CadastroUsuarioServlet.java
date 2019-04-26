@@ -26,6 +26,7 @@ public class CadastroUsuarioServlet extends HttpServlet {
 		pessoa.setSenha(request.getParameter("password"));
 		pessoa.setTelefone(request.getParameter("telefone"));
 		pessoa.setEndereco(request.getParameter("endereco"));
+		
 	
 		CadastroUsuarioService service = new CadastroUsuarioService();
 		
