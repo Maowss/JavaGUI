@@ -72,4 +72,10 @@ public class PessoaDao {
 		
 	}
 
+
+	public void removerContato(Pessoas pessoas) {
+		System.out.println("Chegou no PessoaDAO");
+		
+	}
+
 }

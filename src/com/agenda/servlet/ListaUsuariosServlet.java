@@ -20,16 +20,7 @@ public class ListaUsuariosServlet extends HttpServlet{
 	public String execute(HttpServletRequest request, HttpServletResponse response)throws Exception{
 		this.service = new CadastroUsuarioService();
 		
-		List<Pessoas> contatos = this.service.buscaPessoas();
-		
-		for (Pessoas pessoas : contatos) {
-			System.out.println(pessoas.getNome());
-			System.out.println(pessoas.getEndereco());
-			System.out.println(pessoas.getSenha());
-			System.out.println(pessoas.getTelefone());
-			System.out.println(pessoas.getEmail());
-		}
-		
+		List<Pessoas> contatos = this.service.buscaPessoas();		
 		request.setAttribute("contatos", contatos);
 		
 		return "teste.jsp";
@@ -38,7 +29,7 @@ public class ListaUsuariosServlet extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 		
-		System.out.println("Servlet funcionando");
+//		System.out.println("Servlet Lista Usuario funcionando");
 		try {
 			request.getRequestDispatcher(execute(request, response)).forward(request, response);
 		}catch (Exception e){

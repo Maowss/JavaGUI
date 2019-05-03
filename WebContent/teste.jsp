@@ -21,7 +21,7 @@
 				<li class="nav-item active"><a class="nav-link" href="index.html">Sair
 						<span class="sr-only">(current)</span>
 				</a></li>
-				<li class="nav-item"><a class="nav-link" href="teste.jsp">Contatos</a></li></li>
+				<li class="nav-item"><a class="nav-link" href="lista-usuario">Contatos</a></li></li>
 				<li class="nav-item"><a class="nav-link" href="adiciona-contato.html">Cadastre-se</a></li></li>
 			</ul>
 		</div>
@@ -46,6 +46,9 @@
 			<td>${pessoa.email}</td>
 			<td>${pessoa.telefone}</td>
 			<td>${pessoa.endereco}</td>
+			<td>
+				<a href="remover-contatos" class="badge badge-danger">Apagar</a>
+			</td>
 		</tr>
 	</c:forEach>
 </table>
