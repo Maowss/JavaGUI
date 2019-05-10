@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
+	pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +22,7 @@
 						<span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" href="lista-usuario">Contatos</a></li></li>
-				<li class="nav-item"><a class="nav-link" href="adiciona-contato.html">Cadastre-se</a></li></li>
+				<li class="nav-item"><a class="nav-link" href="adiciona-contato.jsp">Cadastre-se</a></li></li>
 			</ul>
 		</div>
 	</nav>
@@ -49,7 +54,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for="endereco">Endereço</label> <input type="text"
+				<label for="endereco">EndereÃ§o</label> <input type="text"
 					class="form-control" name='endereco' id="endereco"
 					placeholder="1234 Main St">
 			</div>

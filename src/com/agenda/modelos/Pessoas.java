@@ -3,6 +3,7 @@ package com.agenda.modelos;
 public class Pessoas {
 
 	private String nome, endereco, email, senha, telefone;
+	private int idPessoa;
 
 	public String getNome() {
 		return nome;
@@ -43,6 +44,15 @@ public class Pessoas {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	
+	public int getIdPessoa() {
+		return idPessoa;
+	}
+
+	public void setIdPessoa(int idPessoa) {
+		this.idPessoa = idPessoa;
+	}
+
 	
 	
 }

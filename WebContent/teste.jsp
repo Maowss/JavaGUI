@@ -47,7 +47,7 @@
 			<td>${pessoa.telefone}</td>
 			<td>${pessoa.endereco}</td>
 			<td>
-				<a href="remover-contatos" class="badge badge-danger">Apagar</a>
+				<a href="remover-contatos?idPessoa=${pessoa.idPessoa}" class="badge badge-danger">Apagar</a>
 			</td>
 		</tr>
 	</c:forEach>

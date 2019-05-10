@@ -16,7 +16,7 @@ public class PessoaDao {
 
 	public void cadastraDAO(Pessoas pessoa) {
 
-		String SQL = "insert into pessoa (nome, senha, email, telefone, endereco) values (?, ?, ?, ?, ?)";
+		String SQL = "insert into pessoa (nome, senha, email, telefone, endereco, idPessoa) values (?, ?, ?, ?, ?, ?)";
 
 		try {
 			this.connection = new ConnectionFactory().getConnection();
@@ -27,6 +27,7 @@ public class PessoaDao {
 			stmt.setString(3, pessoa.getEmail());
 			stmt.setString(4, pessoa.getTelefone());
 			stmt.setString(5, pessoa.getEndereco());
+			stmt.setInt(6, pessoa.getIdPessoa());
 
 			stmt.execute();
 			stmt.close();
@@ -58,6 +59,7 @@ public class PessoaDao {
 				pessoa.setEmail(rs.getString("email"));
 				pessoa.setEndereco(rs.getString("endereco"));
 				pessoa.setTelefone(rs.getString("telefone"));
+				pessoa.setIdPessoa(rs.getInt("idPessoa"));
 				pessoas.add(pessoa);
 			}
 
@@ -74,7 +76,18 @@ public class PessoaDao {
 
 
 	public void removerContato(Pessoas pessoas) {
-		System.out.println("Chegou no PessoaDAO");
+		String SQL = "delete from pessoa where idPessoa=?";
+		
+		try {
+			this.connection = new ConnectionFactory().getConnection();
+			PreparedStatement stmt = connection.prepareStatement(SQL);
+			stmt.setInt(1, pessoas.getIdPessoa());
+			stmt.execute();
+			stmt.close();
+		}
+		catch (SQLException e) {
+			throw new RuntimeException (e);
+		}
 		
 	}
 

@@ -29,7 +29,6 @@ public class CadastroUsuarioService {
 
 	public void removerContato(Pessoas pessoas) {
 		this.dao.removerContato(pessoas);
-		
 	}
 	
 }
