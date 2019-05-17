@@ -22,7 +22,7 @@
 						<span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" href="lista-usuario">Contatos</a></li></li>
-				<li class="nav-item"><a class="nav-link" href="adiciona-contato.html">Cadastre-se</a></li></li>
+				<li class="nav-item"><a class="nav-link" href="adiciona-contato.jsp">Cadastre-se</a></li></li>
 			</ul>
 		</div>
 	</nav>
@@ -48,6 +48,11 @@
 			<td>${pessoa.endereco}</td>
 			<td>
 				<a href="remover-contatos?idPessoa=${pessoa.idPessoa}" class="badge badge-danger">Apagar</a>
+				<a href="adiciona-contato.jsp?idPessoa=${pessoa.idPessoa}
+				&nome=${pessoa.nome}&senha=${pessoa.senha}
+				&email=${pessoa.email}&telefone=${pessoa.telefone}&endereco=${pessoa.endereco}"
+				 class="badge badge-success">Editar</a>
+				
 			</td>
 		</tr>
 	</c:forEach>

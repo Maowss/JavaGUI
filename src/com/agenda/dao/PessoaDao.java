@@ -90,5 +90,32 @@ public class PessoaDao {
 		}
 		
 	}
+	
+	public void editarContato(Pessoas pessoa) {
+
+		String SQL = "update pessoa set nome=?, senha=?, email=?, telefone=?, "
+				+ "endereco=?, idPessoa=? where id=?";
+
+		try {
+			this.connection = new ConnectionFactory().getConnection();
+			PreparedStatement stmt = this.connection.prepareStatement(SQL);
+
+			stmt.setString(1, pessoa.getNome());
+			stmt.setString(2, pessoa.getSenha());
+			stmt.setString(3, pessoa.getEmail());
+			stmt.setString(4, pessoa.getTelefone());
+			stmt.setString(5, pessoa.getEndereco());
+			stmt.setInt(6, pessoa.getIdPessoa());
+
+			stmt.execute();
+			stmt.close();
+			
+			editarContato(pessoa);
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+	}
 
 }

@@ -34,28 +34,28 @@
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="nome">Nome</label> <input type="text"
-						class="form-control" id="nome" name='nome' placeholder="Nome">
+						class="form-control" id="nome" name='nome' value="${param.nome}" placeholder="Nome">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="password">Password</label> <input type="password"
-						name='password' class="form-control" id="password"
+						name='password' class="form-control" value="${param.senha}" id="password"
 						placeholder="Password">
 				</div>
 				<div class="form-group col-md-12">
 					<label for="email">Email</label> <input type="email"
-						class="form-control" id="email" name='email' placeholder="Email">
+						class="form-control" id="email" value="${param.email}" name='email' placeholder="Email">
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label for="telefone">Telefone</label> <input type="text"
-					class="form-control" data-mask="(99)9999-9999" name='telefone'
+					class="form-control" data-mask="(99)9999-9999" value="${param.telefone}" name='telefone'
 					id="telefone" placeholder="Telefone">
 			</div>
 
 			<div class="form-group">
 				<label for="endereco">EndereÃ§o</label> <input type="text"
-					class="form-control" name='endereco' id="endereco"
+					class="form-control" name='endereco' value="${param.endereco}" id="endereco"
 					placeholder="1234 Main St">
 			</div>
 

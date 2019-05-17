@@ -28,11 +28,15 @@ public class CadastroUsuarioServlet extends HttpServlet {
 		pessoa.setTelefone(request.getParameter("telefone"));
 		pessoa.setEndereco(request.getParameter("endereco"));
 		
-		
-	
 		CadastroUsuarioService service = new CadastroUsuarioService();
 		
-		service.cadastra(pessoa);
+		
+		if(null != request.getParameter("idPessoa") && !request.getParameter("idPessoa").equals("")) {
+			service.editarContato(pessoa);
+			pessoa.setIdPessoa(Integer.parseInt(request.getParameter("idPessoa")));
+		}else {
+			service.cadastra(pessoa);
+		}
 		
 		response.sendRedirect("lista-usuario");
 

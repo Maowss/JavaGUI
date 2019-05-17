@@ -31,4 +31,8 @@ public class CadastroUsuarioService {
 		this.dao.removerContato(pessoas);
 	}
 	
+	public void editarContato(Pessoas pessoas) {
+		this.dao.editarContato(pessoas);
+	}
+	
 }
