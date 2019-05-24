@@ -27,13 +27,13 @@ public class CadastroUsuarioServlet extends HttpServlet {
 		pessoa.setSenha(request.getParameter("password"));
 		pessoa.setTelefone(request.getParameter("telefone"));
 		pessoa.setEndereco(request.getParameter("endereco"));
-		
+				
 		CadastroUsuarioService service = new CadastroUsuarioService();
 		
 		
 		if(null != request.getParameter("idPessoa") && !request.getParameter("idPessoa").equals("")) {
-			service.editarContato(pessoa);
 			pessoa.setIdPessoa(Integer.parseInt(request.getParameter("idPessoa")));
+			service.editarContato(pessoa);
 		}else {
 			service.cadastra(pessoa);
 		}

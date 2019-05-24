@@ -93,8 +93,8 @@ public class PessoaDao {
 	
 	public void editarContato(Pessoas pessoa) {
 
-		String SQL = "update pessoa set nome=?, senha=?, email=?, telefone=?, "
-				+ "endereco=?, idPessoa=? where id=?";
+		String SQL = "update pessoa set nome=?,senha=?,email=?,telefone=?,"
+				+ "endereco=? where idPessoa=?";
 
 		try {
 			this.connection = new ConnectionFactory().getConnection();

@@ -33,8 +33,11 @@
 		<form action="cadastro-usuario">
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label for="nome">Nome</label> <input type="text"
+					<label for="nome">Nome</label> 
+					<input type="text"
 						class="form-control" id="nome" name='nome' value="${param.nome}" placeholder="Nome">
+						<input type="hidden"
+						class="form-control"	name='idPessoa' value="${param.idPessoa}">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="password">Password</label> <input type="password"
