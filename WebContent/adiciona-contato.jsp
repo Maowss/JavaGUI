@@ -38,6 +38,7 @@
 						class="form-control" id="nome" name='nome' value="${param.nome}" placeholder="Nome">
 						<input type="hidden"
 						class="form-control"	name='idPessoa' value="${param.idPessoa}">
+						<!--NO LUGAR DO VALUE ALI EM CIMA COLOCAR O NOME DO QUE ESTARÁ NO IF "cadastroUsuario-->
 				</div>
 				<div class="form-group col-md-6">
 					<label for="password">Password</label> <input type="password"

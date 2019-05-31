@@ -7,21 +7,19 @@ import com.agenda.modelos.Pessoas;
 
 public class CadastroUsuarioService {
 
-	public void cadastra(Pessoas pessoa) {
-		PessoaDao userDAO = new PessoaDao();
-		userDAO.cadastraDAO(pessoa);
-	}
-
 	private PessoaDao dao;
 
 	public CadastroUsuarioService() {
-		this.dao = new PessoaDao();
-		
+		this.dao = new PessoaDao();	
 	}
 
-	public void adiciona(Pessoas pessoa) {
-		this.dao.cadastraDAO(pessoa);
-	}
+//	public void adiciona(Pessoas pessoa) { COMENTAMOS O CÓDIGO POIS ELE ESTÁ EFETUANDO UM CADASTRO
+//		this.dao.cadastraDAO(pessoa); QUE AGORA ESTÁ ACONTECENDO NO MÉTODO cadastrarOuAlterar
+//	}
+	
+//	public void alterar(Pessoas pessoa) {
+//		this.dao.editarContato(pessoa);
+//	}
 
 	public List<Pessoas> buscaPessoas() {
 		return this.dao.buscaPessoas();
@@ -31,8 +29,13 @@ public class CadastroUsuarioService {
 		this.dao.removerContato(pessoas);
 	}
 	
-	public void editarContato(Pessoas pessoas) {
-		this.dao.editarContato(pessoas);
+		
+	public void cadastrarOuAlterar(Pessoas pessoa) {
+		if(0 != pessoa.getIdPessoa()) {
+			this.dao.editarContato(pessoa); //CRIAMOS ESTE NOVO MÉTODO QUE CADASTRA E EDITA, PORQUE
+		}else { 							//A INTELIGENCIA FICA AQUI, E AQUI O ID JÁ ESTÁ TRANSFORMADO
+			this.dao.cadastraDAO(pessoa);	//POIS A TRANSFORMAÇÃO O CORRE NA SERVLET	
+		}
 	}
 	
 }

@@ -33,10 +33,9 @@ public class CadastroUsuarioServlet extends HttpServlet {
 		
 		if(null != request.getParameter("idPessoa") && !request.getParameter("idPessoa").equals("")) {
 			pessoa.setIdPessoa(Integer.parseInt(request.getParameter("idPessoa")));
-			service.editarContato(pessoa);
-		}else {
-			service.cadastra(pessoa);
 		}
+		
+		service.cadastrarOuAlterar(pessoa);
 		
 		response.sendRedirect("lista-usuario");
 

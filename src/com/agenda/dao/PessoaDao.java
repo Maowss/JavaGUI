@@ -13,24 +13,28 @@ import com.agenda.util.ConnectionFactory;
 public class PessoaDao {
 
 	private Connection connection;
+	private PreparedStatement stmt;
+	
+	public PessoaDao() {
+		this.connection = new ConnectionFactory().getConnection();
+	}
 
 	public void cadastraDAO(Pessoas pessoa) {
 
 		String SQL = "insert into pessoa (nome, senha, email, telefone, endereco, idPessoa) values (?, ?, ?, ?, ?, ?)";
 
 		try {
-			this.connection = new ConnectionFactory().getConnection();
-			PreparedStatement stmt = this.connection.prepareStatement(SQL);
+			this.stmt = this.connection.prepareStatement(SQL);
 
-			stmt.setString(1, pessoa.getNome());
-			stmt.setString(2, pessoa.getSenha());
-			stmt.setString(3, pessoa.getEmail());
-			stmt.setString(4, pessoa.getTelefone());
-			stmt.setString(5, pessoa.getEndereco());
-			stmt.setInt(6, pessoa.getIdPessoa());
+			this.stmt.setString(1, pessoa.getNome());
+			this.stmt.setString(2, pessoa.getSenha());
+			this.stmt.setString(3, pessoa.getEmail());
+			this.stmt.setString(4, pessoa.getTelefone());
+			this.stmt.setString(5, pessoa.getEndereco());
+			this.stmt.setInt(6, pessoa.getIdPessoa());
 
-			stmt.execute();
-			stmt.close();
+			this.stmt.execute();
+			this.stmt.close();
 			
 			buscaPessoas();
 
@@ -63,7 +67,7 @@ public class PessoaDao {
 				pessoas.add(pessoa);
 			}
 
-			stmt.close();
+			this.stmt.close();
 			this.connection.close();
 
 			return pessoas;
@@ -81,9 +85,9 @@ public class PessoaDao {
 		try {
 			this.connection = new ConnectionFactory().getConnection();
 			PreparedStatement stmt = connection.prepareStatement(SQL);
-			stmt.setInt(1, pessoas.getIdPessoa());
-			stmt.execute();
-			stmt.close();
+			this.stmt.setInt(1, pessoas.getIdPessoa());
+			this.stmt.execute();
+			this.stmt.close();
 		}
 		catch (SQLException e) {
 			throw new RuntimeException (e);
@@ -98,17 +102,16 @@ public class PessoaDao {
 
 		try {
 			this.connection = new ConnectionFactory().getConnection();
-			PreparedStatement stmt = this.connection.prepareStatement(SQL);
+			
+			this.stmt.setString(1, pessoa.getNome());
+			this.stmt.setString(2, pessoa.getSenha());
+			this.stmt.setString(3, pessoa.getEmail());
+			this.stmt.setString(4, pessoa.getTelefone());
+			this.stmt.setString(5, pessoa.getEndereco());
+			this.stmt.setInt(6, pessoa.getIdPessoa());
 
-			stmt.setString(1, pessoa.getNome());
-			stmt.setString(2, pessoa.getSenha());
-			stmt.setString(3, pessoa.getEmail());
-			stmt.setString(4, pessoa.getTelefone());
-			stmt.setString(5, pessoa.getEndereco());
-			stmt.setInt(6, pessoa.getIdPessoa());
-
-			stmt.execute();
-			stmt.close();
+			this.stmt.execute();
+			this.stmt.close();
 			
 			editarContato(pessoa);
 
